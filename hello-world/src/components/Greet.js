@@ -10,7 +10,19 @@ import React from 'react'
 //}
 
 //Also this
-const Greet = () => <h1>Hello Rayhann</h1>
 
+// eps 9: learn props
+// if you want to render attribute, use props.attributeName
+// if you want to render children (inside <h1>print this</h1>), use props.children
+const Greet = (props) => {
+
+    console.log(props);
+    return (
+    <div>
+        <h1>Hello {props.name} a.k.a {props.heroName}</h1>
+        {props.children}
+    </div>
+    )
+}
 
 export default Greet
