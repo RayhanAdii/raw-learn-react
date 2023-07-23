@@ -28,22 +28,24 @@ const Greet = (props) => {
 // if you want to destructure the props, do this
 const Greet1 = (props) => {
     const{name, heroName} = props
-    console.log(props);
+    //console.log(props);
     return (
     <div>
         <h1>Hello {name} a.k.a {heroName}</h1>
-        {props.children}
+        {//props.children
+        }
     </div>
     )
 }
 
 // or this
 const Greet2 = ({name, heroName}) => {
-    console.log(props);
+    //console.log(props);
     return (
     <div>
         <h1>Hello {name} a.k.a {heroName}</h1>
-        {props.children}
+        {//props.children
+        }
     </div>
     )
 }
