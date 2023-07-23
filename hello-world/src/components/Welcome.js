@@ -12,4 +12,15 @@ class Welcome extends Component {
 
 }
 
+// if you want to destructure class props, do this
+class Welcome1 extends Component {
+    render(){
+        const {name, heroName} = this.props
+        //for state
+        // const {state1,state2} = this.state
+        return <h1>Welcome {name} aka {heroName}</h1>
+    }
+
+}
+
 export default Welcome
