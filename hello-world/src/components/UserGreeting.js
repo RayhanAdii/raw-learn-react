@@ -9,7 +9,7 @@ class UserGreeting extends Component {
       super(props)
     
       this.state = {
-         isLoggedIn: false
+         isLoggedIn: true
       }
     }
     
@@ -22,14 +22,28 @@ class UserGreeting extends Component {
     //       return <div>Welcome Guest</div>           
     //     }
 
-    let message
-    if (this.state.isLoggedIn){
-        message = <div>Welcome Rayhan</div>
-    }else{
-        message = <div>Welcome Guest</div>
-    }
-    return <div>{message}</div>
+    // Method 2: Element Variable
+    // let message
+    // if (this.state.isLoggedIn){
+    //     message = <div>Welcome Rayhan</div>
+    // }else{
+    //     message = <div>Welcome Guest</div>
+    // }
+    // return <div>{message}</div>
 
+
+    // Method 3: Ternary Conditional Operator
+    // return(
+    //     this.state.isLoggedIn ? (
+    //         <div>Welcome Rayhan</div>
+    //     ) : (
+    //         <div>Welcome Guest</div>
+    //     )
+    // )
+
+    // Method 4: short-circuit Operator
+    // Render one or nothing
+    return this.state.isLoggedIn && <div>Welcome Rayhan</div>
         
     //  return (
     //   <div>
