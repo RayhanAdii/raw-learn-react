@@ -1,4 +1,5 @@
 import React from 'react'
+import Person from './Person'
 
 // Learn list rendering 
 
@@ -49,8 +50,10 @@ function NameList() {
         }
       ]
       
-    const personList = persons.map(person => <h3>Hello, my name is {person.name}, i am {person.age} years old.</h3>)
-    return personList
+    const personList = persons.map(person => 
+        <Person person = {person}></Person>
+    )
+    return <div>{personList}</div>
 }
 
 export default NameList
