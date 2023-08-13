@@ -50,10 +50,11 @@ function NameList() {
         }
       ]
       
-    const personList = persons.map(person => 
-        <Person person = {person}></Person>
-    )
-    return <div>{personList}</div>
+      const personList = persons.map(person => 
+        <Person key={person.id} person={person} />
+    );
+    
+    return <div>{personList}</div>;
 }
 
 export default NameList
