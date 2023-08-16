@@ -6,6 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        {/* Habis belajar pengantar lifecycle method*/}
         <Form></Form>
       </div>
     )
