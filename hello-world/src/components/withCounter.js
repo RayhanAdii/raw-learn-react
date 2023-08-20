@@ -1,6 +1,7 @@
 import React from "react";
 
 /* Create HOC */
+// For proper naming, please refer to another source
 
 const UpdatedComponent = (OriginalComponent) => {
     class NewComponent extends React.Component{
