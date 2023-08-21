@@ -20,13 +20,22 @@ import ClickCounterTwo from './components/ClickCounterTwo';
 import HoverCounterTwo from './components/HoverCounterTwo';
 import User from './components/User';
 import CounterTwo from './components/CounterTwo';
+import ComponentC from './components/ComponentC';
+import { UserProvider } from './components/userContext';
 
 class App extends Component {
   render() {
     return (
       <div className='App'>
 
+      {/*Learn how to use Context */}
+      <UserProvider value = "Rayhan">
+        <ComponentC/>
+      </UserProvider>
 
+
+
+      {/*
       <CounterTwo 
         render={ (count, incrementCount)=> 
           <ClickCounterTwo count = {count} incrementCount = {incrementCount}></ClickCounterTwo>}/>
@@ -35,8 +44,6 @@ class App extends Component {
         render={ (count, incrementCount)=> 
           <HoverCounterTwo count = {count} incrementCount = {incrementCount}></HoverCounterTwo>}/>
 
-
-      {/*
       <ClickCounterTwo/>
       <HoverCounterTwo/>
       <User render = {(isLoggedIn) => isLoggedIn ? 'Rayhan' : 'Guest'} />
