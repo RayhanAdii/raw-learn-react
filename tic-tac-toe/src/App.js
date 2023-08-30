@@ -1,9 +1,18 @@
 import './App.css';
+import Square from './component/Square';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="board">
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
     </div>
   );
 }
