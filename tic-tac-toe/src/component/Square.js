@@ -1,19 +1,27 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 
-function Square() {
 
-    const [value, setValue] = useState('')
 
-    function handleClick(){
-        setValue('X')
+class Square extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         value:''
+      }
     }
 
+    handleClick = () => {
+        this.setState({ value: 'X' });
+    }
 
-  return (
-    <div>
-      <button onClick={handleClick} className='square'>{value}</button>
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick} className='square'>{this.state.value}</button>
+      </div>
+    )
+  }
 }
 
 export default Square

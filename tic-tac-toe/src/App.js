@@ -1,18 +1,13 @@
+import { useState } from 'react';
 import './App.css';
-import Square from './component/Square';
+import Board from './component/Board';
+import BoardClass from './component/BoardClass';
 
 function App() {
+
   return (
-    <div className="board">
-        <Square/>
-        <Square/>
-        <Square/>
-        <Square/>
-        <Square/>
-        <Square/>
-        <Square/>
-        <Square/>
-        <Square/>
+    <div>
+      <BoardClass/>
     </div>
   );
 }
