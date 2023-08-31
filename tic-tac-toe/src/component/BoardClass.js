@@ -21,11 +21,11 @@ class BoardClass extends Component {
         // Agar dapat time travel
         //Meng-copy data, lalu mengubah value, lalu nextSquare = Square
         const nextSquares = this.state.squares.slice();
-        if (this.state.xIsNext){
-            nextSquares[i] = 'X'
-        } else {
-            nextSquares[i] = 'O'
-        }
+
+        // jika xIsNext is true, nextSquares[i] = X, else nextSquares[i] = O
+        nextSquares[i] = this.state.xIsNext ? 'X' : 'O';
+
+
         this.setState({ squares : nextSquares });
         this.setState({ xIsNext : !this.state.xIsNext})
     }
