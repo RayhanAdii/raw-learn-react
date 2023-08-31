@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Square from './Square';
+import SquareFunction from './SquareFunction'
 
 
 class BoardClass extends Component {
@@ -10,23 +11,33 @@ class BoardClass extends Component {
       this.state = {
         squares: Array(9).fill(null)
       }
+
+      this.handleClick = this.handleClick.bind(this)
     }
 
-    
+    handleClick = (i) => {
+        const nextSquares = this.state.squares.slice();
+        nextSquares[i] = 'X'
+        this.setState({ squares : nextSquares });
+    }
+
+    renderSquares() {
+        return this.state.squares.map((value, index) => (
+            <SquareFunction
+                key={index}
+                value={value}
+                onSquareClick={() => this.handleClick(index)}
+            />
+        ));
+    }
+
+
     
 
   render() {
     return (
     <div className="board">
-        <Square value={this.state.squares[0]}/>
-        <Square value={this.state.squares[1]}/>
-        <Square value={this.state.squares[2]}/>
-        <Square value={this.state.squares[3]}/>
-        <Square value={this.state.squares[4]}/>
-        <Square value={this.state.squares[5]}/>
-        <Square value={this.state.squares[6]}/>
-        <Square value={this.state.squares[7]}/>
-        <Square value={this.state.squares[8]}/>
+        {this.renderSquares()}
     </div>
     )
   }
