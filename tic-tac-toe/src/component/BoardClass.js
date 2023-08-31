@@ -9,16 +9,25 @@ class BoardClass extends Component {
       super(props)
     
       this.state = {
-        squares: Array(9).fill(null)
+        squares: Array(9).fill(null),
+        xIsNext: true
       }
 
       this.handleClick = this.handleClick.bind(this)
     }
 
     handleClick = (i) => {
+        //Menggunakan Konsep Immutability
+        // Agar dapat time travel
+        //Meng-copy data, lalu mengubah value, lalu nextSquare = Square
         const nextSquares = this.state.squares.slice();
-        nextSquares[i] = 'X'
+        if (this.state.xIsNext){
+            nextSquares[i] = 'X'
+        } else {
+            nextSquares[i] = 'O'
+        }
         this.setState({ squares : nextSquares });
+        this.setState({ xIsNext : !this.state.xIsNext})
     }
 
     renderSquares() {
