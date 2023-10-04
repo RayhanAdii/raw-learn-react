@@ -11,7 +11,6 @@ class BoardClass extends Component {
       this.state = {
         squares: Array(9).fill(null),
         xIsNext: true,
-        status: ''
       }
 
       this.handleClick = this.handleClick.bind(this)
